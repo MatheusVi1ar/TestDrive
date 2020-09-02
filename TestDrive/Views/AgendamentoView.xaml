@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="{Binding Veiculo.Nome}"
+             x:Class="TestDrive.Views.AgendamentoView">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="Seus dados">
+                        <EntryCell Label="Nome" Text="{Binding Nome}"></EntryCell>
+                        <EntryCell Label="Telefone" Text="{Binding Telefone}" Keyboard="Telephone"></EntryCell>
+                        <EntryCell Label="Email" Text="{Binding Email}" Keyboard="Email"></EntryCell>
+                    </TableSection>
+                    <TableSection Title="Agendamento">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="15,0,0,0">
+                                <Label Text="Data" VerticalOptions="Center"></Label>
+                                <DatePicker Date="{Binding Data}"></DatePicker>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="15,0,0,0">
+                                <Label Text="Hora" VerticalOptions="Center"></Label>
+                                <TimePicker Time="{Binding Hora}"></TimePicker>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <Button x:Name="btnAgendar" Text="Agendar" Clicked="btnAgendar_Clicked"></Button>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

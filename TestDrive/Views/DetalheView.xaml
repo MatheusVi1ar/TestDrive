@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestDrive.Views.DetalheView">
+    <StackLayout Padding="25">
+        <TableView Intent="Settings">
+            <TableRoot>
+                <TableSection Title="Características">
+                    <SwitchCell Text="{Binding FreioABS}" On="{Binding TemFreioABS, Mode=TwoWay}"></SwitchCell>
+                    <SwitchCell Text="{Binding Piscante}" On="{Binding TemPiscanteIrado, Mode=TwoWay}"></SwitchCell>
+                    <SwitchCell Text="{Binding RadioMP3}" On="{Binding TemRadioMP3, Mode=TwoWay}"></SwitchCell>
+                    <TextCell   Text="{Binding ValorTotal, Mode=TwoWay}"></TextCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <Button x:Name="BtnProximo" Text="Próximo" Clicked="BtnProximo_Clicked" VerticalOptions="End"></Button>
+    </StackLayout>
+
+</ContentPage>
